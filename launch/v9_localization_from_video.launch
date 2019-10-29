@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<launch>
+
+    <include file="$(find v9_ball_detector)/launch/v9_ball_detector_from_video.launch" />
+	
+    <node pkg="v9_localization" name="v9_localization_node" type="v9_localization_node" output="screen" >
+        <remap from="/v9_localization_node/segment_white" to="/v9_ball_detector_node/segment_white" />
+        <remap from="/v9_localization_node/inv_segment_green" to="/v9_ball_detector_node/inv_segment_green" />
+        <remap from="/v9_localization_node/field_boundary" to="/v9_ball_detector_node/field_boundary" />
+    </node>
+
+</launch>

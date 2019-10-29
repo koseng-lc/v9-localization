@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<launch>
+
+<!--    <include file="$(find v9_ball_detector)/launch/v9_ball_detector.launch" />-->
+
+    <node pkg="v9_localization" name="v9_localization_node" type="v9_localization_node" output="screen" >
+        <!--<remap from="/v9_localization_node/segment_white" to="/v9_ball_detector_node/segment_white" />
+        <remap from="/v9_localization_node/inv_segment_green" to="/v9_ball_detector_node/inv_segment_green" />
+        <remap from="/v9_localization_node/field_boundary" to="/v9_ball_detector_node/field_boundary" />-->
+
+        <!-- Logitech C922 C920 Field of View -->
+        <!-- <param name="H_FOV" type="double" value="65.87" />
+        <param name="V_FOV" type="double" value="51.83" /> -->
+        <!-- Microsoft Lifecam Cinema -->
+        <param name="H_FOV" type="double" value="61.25" />
+        <param name="V_FOV" type="double" value="47.88" />
+        <param name="circle_cost" type="double" value="6.0" />
+        <param name="inlier_error" type="double" value="1.0" />
+        <param name="fx" type="double" value="540.552005478" />
+        <param name="fy" type="double" value="540.571602012" />
+<!--ABI Param-->
+        <!--<param name="roll_offset" type="double" value="0.0" />
+        <param name="pitch_offset" type="double" value="-5.0" />
+        <param name="z_offset" type="double" value="0.0" />
+        <param name="shift_const" type="double" value="100.0" />
+        <param name="yaw_offset" type="double" value="0.0" />
+        <param name="pan_rot_comp" type="double" value="0.0" />-->
+<!--  -->
+<!-- ROBI Param -->
+        <!-- <param name="roll_offset" type="double" value="-2.56" />
+        <param name="pitch_offset" type="double" value="1.5" />
+        <param name="z_offset" type="double" value="0.0" />
+        <param name="shift_const" type="double" value="-240.0" />
+        <param name="yaw_offset" type="double" value="0.0" />
+        <param name="pan_rot_comp" type="double" value="0.0" /> -->
+<!-- -->
+<!-- ALfA Param -->
+        <!-- <param name="roll_offset" type="double" value="0.0" />
+        <param name="pitch_offset" type="double" value="-2.5" />
+        <param name="z_offset" type="double" value="0.0" />
+        <param name="shift_const" type="double" value="-240.0" />
+        <param name="yaw_offset" type="double" value="0.0" />
+        <param name="pan_rot_comp" type="double" value="10.0" /> -->
+<!-- -->
+<!--Gazebo Param-->
+        <param name="roll_offset" type="double" value="0.0" />
+        <param name="pitch_offset" type="double" value="3.0" />
+        <param name="z_offset" type="double" value="0.0" />
+        <param name="shift_const" type="double" value="-240.0" />
+        <param name="yaw_offset" type="double" value="0.0" />
+<!--  -->
+        <param name="tilt_limit" type="double" value="30" />
+        <!--
+        false - To the right of localization monitor / 0 degree
+        true - To the left of localization monitor / 180 degree
+        -->
+        <param name="attack_dir" type="bool" value="false" />
+    </node>
+
+</launch>
